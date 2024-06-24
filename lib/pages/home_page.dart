@@ -3,6 +3,9 @@ import 'package:demo_app/constants/size.dart';
 import 'package:demo_app/widgets/drawer_mobile.dart';
 import 'package:demo_app/widgets/header_desktop.dart';
 import 'package:demo_app/widgets/header_mobile.dart';
+import 'package:demo_app/widgets/main_desktop.dart';
+import 'package:demo_app/widgets/main_mobile.dart';
+import 'package:demo_app/widgets/products_desktop.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -34,18 +37,15 @@ class _HomePageState extends State<HomePage> {
                         scaffoldKey.currentState?.openEndDrawer();
                       },
                     ),
+
               //About
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
-              ),
+              constraints.maxWidth >= kMinDesktopWidth
+                  ? const LandingPage()
+                  : const LandingPageMobile(),
+
               //Products
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
-              ),
+              const ProductsServices(),
+
               //Contact Us
               Container(
                 height: 500,
