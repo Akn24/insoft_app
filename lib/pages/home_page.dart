@@ -1,5 +1,7 @@
 import 'package:demo_app/constants/colors.dart';
 import 'package:demo_app/constants/size.dart';
+import 'package:demo_app/widgets/aboutus_desktop.dart';
+import 'package:demo_app/widgets/aboutus_mobile.dart';
 import 'package:demo_app/widgets/drawer_mobile.dart';
 import 'package:demo_app/widgets/header_desktop.dart';
 import 'package:demo_app/widgets/header_mobile.dart';
@@ -22,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
           key: scaffoldKey,
-          backgroundColor: CustomColor.scaffoldBg,
+          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
           endDrawer: constraints.maxWidth >= kMinDesktopWidth
               ? null
               : const DrawerMobile(),
@@ -38,10 +40,15 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
 
-              //About
+              //LandingPage
               constraints.maxWidth >= kMinDesktopWidth
                   ? const LandingPage()
                   : const LandingPageMobile(),
+
+              //About Us
+              constraints.maxWidth >= kMinDesktopWidth
+                  ? const AboutUsDesktop()
+                  : const AboutUsMobile(),
 
               //Products
               const ProductsServices(),
