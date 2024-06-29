@@ -11,7 +11,7 @@ class ProductsServices extends StatelessWidget {
     double screenWidth = MediaQuery.sizeOf(context).width;
     return Container(
       width: screenWidth,
-      color: Colors.black,
+      color: CustomColor.scaffoldBg,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       child: Column(
         children: [

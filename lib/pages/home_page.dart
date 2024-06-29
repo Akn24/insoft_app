@@ -2,6 +2,7 @@ import 'package:demo_app/constants/colors.dart';
 import 'package:demo_app/constants/size.dart';
 import 'package:demo_app/widgets/aboutus_desktop.dart';
 import 'package:demo_app/widgets/aboutus_mobile.dart';
+import 'package:demo_app/widgets/contact_section.dart';
 import 'package:demo_app/widgets/drawer_mobile.dart';
 import 'package:demo_app/widgets/header_desktop.dart';
 import 'package:demo_app/widgets/header_mobile.dart';
@@ -24,7 +25,7 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
           key: scaffoldKey,
-          backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+          backgroundColor: CustomColor.scaffoldBg,
           endDrawer: constraints.maxWidth >= kMinDesktopWidth
               ? null
               : const DrawerMobile(),
@@ -54,11 +55,7 @@ class _HomePageState extends State<HomePage> {
               const ProductsServices(),
 
               //Contact Us
-              Container(
-                height: 500,
-                width: double.maxFinite,
-                color: Colors.blueGrey,
-              ),
+              const ContactUs()
             ],
           ));
     });

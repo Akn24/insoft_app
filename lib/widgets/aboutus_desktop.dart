@@ -10,16 +10,16 @@ class AboutUsDesktop extends StatelessWidget {
     double screenWidth = MediaQuery.sizeOf(context).width;
     return Container(
       width: screenWidth,
-      color: Colors.green,
+      color: CustomColor.scaffoldBg,
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       child: Column(
         children: [
           const Text(
             "About Us",
             style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: CustomColor.whitePrimary),
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+            ),
           ),
           Row(
             children: [

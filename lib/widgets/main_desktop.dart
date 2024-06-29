@@ -11,7 +11,7 @@ class LandingPage extends StatelessWidget {
     double screenHeight = MediaQuery.sizeOf(context).height;
     return Container(
       margin: const EdgeInsets.symmetric(horizontal: 20),
-      height: screenHeight / 1.2,
+      height: screenHeight / 1.1,
       constraints: const BoxConstraints(minHeight: 350),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
