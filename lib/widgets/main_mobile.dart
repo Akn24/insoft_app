@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
-
 class LandingPageMobile extends StatelessWidget {
   const LandingPageMobile({super.key});
 
@@ -31,7 +29,7 @@ class LandingPageMobile extends StatelessWidget {
                 height: 1.5,
                 fontWeight: FontWeight.bold,
                 fontSize: 24.0,
-                color: CustomColor.whitePrimary),
+                color: Colors.white),
           ),
           const SizedBox(
             height: 15,

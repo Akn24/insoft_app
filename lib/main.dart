@@ -1,3 +1,4 @@
+import 'package:demo_app/constants/theme.dart';
 import 'package:demo_app/pages/home_page.dart';
 import 'package:flutter/material.dart';
 
@@ -13,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Company Web',
-      theme: ThemeData.light(),
+      theme: AppTheme.themeData,
       home: const HomePage(),
     );
   }

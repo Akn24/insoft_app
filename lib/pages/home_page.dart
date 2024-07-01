@@ -1,4 +1,3 @@
-import 'package:demo_app/constants/colors.dart';
 import 'package:demo_app/constants/size.dart';
 import 'package:demo_app/widgets/aboutus_desktop.dart';
 import 'package:demo_app/widgets/aboutus_mobile.dart';
@@ -25,7 +24,7 @@ class _HomePageState extends State<HomePage> {
     return LayoutBuilder(builder: (context, constraints) {
       return Scaffold(
           key: scaffoldKey,
-          backgroundColor: CustomColor.scaffoldBg,
+          backgroundColor: Theme.of(context).primaryColor,
           endDrawer: constraints.maxWidth >= kMinDesktopWidth
               ? null
               : const DrawerMobile(),

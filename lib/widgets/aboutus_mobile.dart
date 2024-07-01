@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
-
 class AboutUsMobile extends StatelessWidget {
   const AboutUsMobile({super.key});
 
@@ -14,13 +12,7 @@ class AboutUsMobile extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
       child: Column(
         children: [
-          const Text(
-            "About Us",
-            style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: CustomColor.whitePrimary),
-          ),
+          Text("About Us", style: Theme.of(context).textTheme.displayLarge),
           const Padding(
             padding: EdgeInsets.all(16.0),
             child: Text(

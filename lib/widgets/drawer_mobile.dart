@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
 import '../constants/nav_items.dart';
 
 class DrawerMobile extends StatelessWidget {
@@ -9,7 +8,7 @@ class DrawerMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: CustomColor.scaffoldBg,
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       child: ListView(
         children: [
           Align(
@@ -29,7 +28,7 @@ class DrawerMobile extends StatelessWidget {
               leading: Icon(navIcons[i]),
               title: Text(navTitles[i]),
               titleTextStyle: const TextStyle(
-                  color: CustomColor.whitePrimary,
+                  color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 16),
               onTap: () {},

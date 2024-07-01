@@ -1,7 +1,6 @@
 import 'package:demo_app/constants/size.dart';
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
 import 'custom_text_field.dart';
 
 class ContactUs extends StatelessWidget {
@@ -11,16 +10,10 @@ class ContactUs extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.fromLTRB(25, 20, 25, 60),
-      color: CustomColor.scaffoldBg,
+      color: Theme.of(context).scaffoldBackgroundColor,
       child: Column(
         children: [
-          const Text(
-            "Get in touch",
-            style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 24,
-                color: CustomColor.whitePrimary),
-          ),
+          Text("Get in touch", style: Theme.of(context).textTheme.displayLarge),
           const SizedBox(
             height: 50,
           ),

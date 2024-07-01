@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
-
 class SiteLogo extends StatelessWidget {
   const SiteLogo({super.key, this.onTap});
   final VoidCallback? onTap;
@@ -10,11 +8,9 @@ class SiteLogo extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: const Text(
-        "Ankit",
+        "Insoft Solutions",
         style: TextStyle(
-            fontSize: 22,
-            fontWeight: FontWeight.bold,
-            color: CustomColor.yellowSecondary),
+            fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
       ),
     );
   }

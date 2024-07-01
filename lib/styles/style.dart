@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
-
 BoxDecoration kHeaderDecoration = BoxDecoration(
     gradient: const LinearGradient(
-      colors: [Colors.transparent, CustomColor.bgLight1],
+      colors: [Color(0xFF003366), Color(0xFF66B2FF)],
     ),
     borderRadius: BorderRadius.circular(100));

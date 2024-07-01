@@ -2,7 +2,6 @@ import 'package:demo_app/styles/style.dart';
 import 'package:demo_app/widgets/site_logo.dart';
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
 import '../constants/nav_items.dart';
 
 class HeaderDesktop extends StatelessWidget {
@@ -17,8 +16,11 @@ class HeaderDesktop extends StatelessWidget {
         decoration: kHeaderDecoration,
         child: Row(
           children: [
-            SiteLogo(
-              onTap: () {},
+            Padding(
+              padding: const EdgeInsets.only(left: 30.0),
+              child: SiteLogo(
+                onTap: () {},
+              ),
             ),
             const Spacer(),
             for (int i = 0; i < navTitles.length; i++)
@@ -28,11 +30,11 @@ class HeaderDesktop extends StatelessWidget {
                     onPressed: () {},
                     child: Text(
                       navTitles[i],
-                      style: const TextStyle(
-                        fontSize: 16,
-                        fontWeight: FontWeight.w500,
-                        color: CustomColor.whitePrimary,
-                      ),
+                      style:
+                          Theme.of(context).textTheme.displayMedium?.copyWith(
+                                fontSize: 16,
+                                fontWeight: FontWeight.w500,
+                              ),
                     )),
               ),
           ],

@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../constants/colors.dart';
-
 class CustomTextField extends StatelessWidget {
   const CustomTextField({
     super.key,
@@ -19,18 +17,15 @@ class CustomTextField extends StatelessWidget {
     return TextField(
       controller: controller,
       maxLines: maxLines,
-      style: const TextStyle(
-        color: CustomColor.scaffoldBg,
-      ),
       decoration: InputDecoration(
           contentPadding: const EdgeInsets.all(16),
           filled: true,
-          fillColor: CustomColor.whiteSecondary,
+          fillColor: Colors.grey,
           focusedBorder: getInputBorder,
           enabledBorder: getInputBorder,
           border: getInputBorder,
           hintText: hintText,
-          hintStyle: const TextStyle(color: CustomColor.hintDark)),
+          hintStyle: const TextStyle(color: Color(0xff666874))),
     );
   }
 
