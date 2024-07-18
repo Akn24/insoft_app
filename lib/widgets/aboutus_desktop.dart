@@ -19,8 +19,8 @@ class AboutUsDesktop extends StatelessWidget {
                 flex: 1,
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
-                  child: Image.network(
-                    'https://via.placeholder.com/400',
+                  child: Image.asset(
+                    "assets/about_us.jpg",
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -30,10 +30,16 @@ class AboutUsDesktop extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.all(16.0),
                   child: Text(
-                    'Consequat cillum occaecat ut labore. Ut magna tempor enim minim eiusmod velit aute commodo nisi ea ad. Do cupidatat non anim nulla aute laboris incididunt non do nisi. Incididunt eiusmod do amet minim officia commodo sunt officia ut eu fugiat velit id.'
-                    'Labore fugiat enim pariatur et duis mollit consequat minim mollit labore cupidatat. Nulla cillum occaecat in adipisicing nostrud sunt. Officia ipsum reprehenderit aute minim laboris do exercitation. Veniam non cupidatat irure sint cupidatat amet. Occaecat ut Lorem voluptate eiusmod dolore. Proident amet laboris ad et ad adipisicing nisi esse cillum. Cillum reprehenderit deserunt elit ad voluptate ullamco.'
-                    'Aute eiusmod Lorem velit deserunt. Aliqua veniam incididunt eiusmod eu amet ad cupidatat. Pariatur laboris amet commodo commodo consectetur elit enim eiusmod nisi. Lorem ipsum aliquip excepteur velit amet reprehenderit qui reprehenderit.',
-                    style: Theme.of(context).textTheme.displayMedium,
+                    'Insoft Solutions is one of the fastest growing software houses, based in Chennai. We provide end-to-end business solutions for Tally, covering the entire gamut from sales, implementation, training, customization, after-sales services, and maintenance. Insoft Solutions also offers integrated, customized, and enhanced products/applications to meet diverse client needs.'
+                    '\n\nWe help clients manage the business and technology complexities of today\'s economy by providing software, technological expertise, quality procedures, and services. Our offerings include software and web solutions that fit your business and budget, helping you stay ahead of competitors in a challenging global market. Our solutions are derived from a deep understanding of our clients needs and requirements.'
+                    '\n\nOur experienced project management team, with proven technical capabilities, ensures that our customers receive intelligent solutions in the most timely, cost-efficient, and reliable manner. We are highly experienced custom software programmers serving the varied interests of our valued clients.'
+                    '\nOur software development center gives our clients the advantage of obtaining high-quality solutions at lower costs. This means you get custom programs for your business at a relatively low price, thus saving significantly on development costs.'
+                    '\n\nInsoft Solutions understands the unique business implications of each client and offers highly customized solutions that fit perfectly with your business needs. We are proud of our highly satisfied customers who continue to give us repeat business for their growing requirements.'
+                    'Additionally, Insoft Solutions helps with managing accounts, educating people about Tally, selling the software, and providing comprehensive services related to it.',
+                    style: Theme.of(context)
+                        .textTheme
+                        .displayMedium
+                        ?.copyWith(color: Colors.black54),
                   ),
                 ),
               )

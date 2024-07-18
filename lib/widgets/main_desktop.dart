@@ -22,11 +22,9 @@ class LandingPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "Culpa ullamco consectetur magna irure sit laboris quis nostrud cupidatat quis quis elit quis.",
-                    style: Theme.of(context)
-                        .textTheme
-                        .displayLarge
-                        ?.copyWith(height: 1.5, fontSize: 30),
+                    "Your one-stop solution for comprehensive Tally services and customized business software, helping you stay ahead in today's competitive market.",
+                    style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                        height: 1.5, fontSize: 24, color: Colors.black54),
                   ),
                   const SizedBox(
                     height: 15,
@@ -34,11 +32,25 @@ class LandingPage extends StatelessWidget {
                   SizedBox(
                     width: 250,
                     child: ElevatedButton(
-                        onPressed: () {}, child: const Text("Get in touch")),
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                          backgroundColor: Colors.black),
+                      child: const Text(
+                        "Get in touch",
+                        style: TextStyle(color: Colors.blue, fontSize: 16),
+                      ),
+                    ),
                   )
                 ],
               ),
             ),
+          ),
+          const VerticalDivider(
+            color: Colors.black45,
+            width: 10,
+            thickness: 2,
+            indent: 200,
+            endIndent: 200,
           ),
           Expanded(
             flex: 1,

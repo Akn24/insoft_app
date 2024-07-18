@@ -13,18 +13,46 @@ class ProductList {
 
 List<ProductList> productList = [
   ProductList(
-      image: "assets/tally-prime-product.jpg",
-      title: "Tally Prime",
+      image: "assets/tally-prime-silver-single-user.png",
+      title: "Tally Prime GST Ready - Single User",
       subtitle:
-          "Labore sunt nisi cillum sint reprehenderit. Quis consequat consequat tempor nisi cillum proident. Eiusmod veniam quis culpa occaecat quis excepteur laborum elit proident veniam voluptate. Aliquip dolore et dolor consequat laborum."),
+          "TallyPrime Silver Single User. The all-new TallyPrime is India’s most popular business software."),
   ProductList(
       image: "assets/tally-prime-product.jpg",
-      title: "Tally Prime1",
+      title: "Tally Prime GST Ready - Multi User",
       subtitle:
-          "Sint ullamco excepteur anim ipsum officia cillum reprehenderit ex. Culpa quis elit do ut ullamco. Sit in occaecat id velit amet sint deserunt est sint deserunt aliqua dolor. Reprehenderit deserunt aliqua est irure ea eu commodo veniam deserunt. Ullamco voluptate dolor cillum irure qui nulla ea cupidatat et voluptate adipisicing id commodo."),
+          "TallyPrime Gold Multi User. The all-new TallyPrime is India’s most popular business software."),
+  ProductList(
+      image: "assets/tally-prime-server.jpg",
+      title: "Tally Prime Server",
+      subtitle:
+          "Tally Prime Server helps enhance the speed and control of Tally multi-user by converting the current ‘peer-to-peer’ kind of data access."),
   ProductList(
       image: "assets/tally-prime-product.jpg",
-      title: "Tally Prime",
+      title: "Tally Prime Server",
       subtitle:
-          "Sint ullamco excepteur anim ipsum officia cillum reprehenderit ex. Culpa quis elit do ut ullamco. Sit in occaecat id velit amet sint deserunt est sint deserunt aliqua dolor. Reprehenderit deserunt aliqua est irure ea eu commodo veniam deserunt. Ullamco voluptate dolor cillum irure qui nulla ea cupidatat et voluptate adipisicing id commodo.")
+          "Tally Prime Server helps enhance the speed and control of Tally multi-user by converting the current ‘peer-to-peer’ kind of data access."),
+  ProductList(
+      image: "assets/tally-prime-product.jpg",
+      title: "Tally Prime Server",
+      subtitle:
+          "Tally Prime Server helps enhance the speed and control of Tally multi-user by converting the current ‘peer-to-peer’ kind of data access.")
+];
+
+List<ProductList> serviceList = [
+  ProductList(
+      image: "assets/Tally-AWS-Cloud.jpg",
+      title: "Tally Prime Single User Renewal (Silver Renewal)",
+      subtitle:
+          "Renew and Stay Updated! Harness the power of TSS (Tally Software Services) – so that you are always on our latest release."),
+  ProductList(
+      image: "assets/Biz-Analyst-Tally-Mobile-App.jpg",
+      title: "Biz Analyst - Tally Mobile App",
+      subtitle:
+          "Biz Analyst Tally mobile app brings real time information & allows you to access your Tally ERP9 data anytime / anywhere."),
+  ProductList(
+      image: "assets/Tally-Cloud.jpg",
+      title: "Tally Cloud",
+      subtitle:
+          "Access your Tally.ERP 9 from anywhere & any device. No need to install Tally on any of your local systems.")
 ];
