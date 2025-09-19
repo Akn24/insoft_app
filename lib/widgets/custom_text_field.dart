@@ -18,19 +18,27 @@ class CustomTextField extends StatelessWidget {
       controller: controller,
       maxLines: maxLines,
       decoration: InputDecoration(
-          contentPadding: const EdgeInsets.all(16),
-          filled: true,
-          fillColor: Colors.grey,
-          focusedBorder: getInputBorder,
-          enabledBorder: getInputBorder,
-          border: getInputBorder,
-          hintText: hintText,
-          hintStyle: const TextStyle(color: Color(0xff666874))),
+        contentPadding: const EdgeInsets.all(18),
+        filled: true,
+        fillColor: Colors.white.withOpacity(0.7),
+        focusedBorder: getInputBorder,
+        enabledBorder: getInputBorder,
+        border: getInputBorder,
+        hintText: hintText,
+        hintStyle: const TextStyle(color: Color(0xFF666874)),
+      ),
+      style: const TextStyle(
+        color: Color(0xFF121212),
+        fontSize: 16,
+        fontWeight: FontWeight.w500,
+      ),
     );
   }
 
   OutlineInputBorder get getInputBorder {
     return OutlineInputBorder(
-        borderRadius: BorderRadius.circular(10), borderSide: BorderSide.none);
+      borderRadius: BorderRadius.circular(14),
+      borderSide: BorderSide.none,
+    );
   }
 }

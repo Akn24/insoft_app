@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../constants/nav_items.dart';
+//import '../constants/theme.dart';
 
 class DrawerMobile extends StatelessWidget {
   const DrawerMobile({super.key});
@@ -8,7 +9,8 @@ class DrawerMobile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
-      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+      backgroundColor: Colors.white,
+      elevation: 12,
       child: ListView(
         children: [
           Align(
@@ -19,18 +21,19 @@ class DrawerMobile extends StatelessWidget {
                   onPressed: () {
                     Navigator.of(context).pop();
                   },
-                  icon: const Icon(Icons.close)),
+                  icon: const Icon(Icons.close, color: Colors.white)),
             ),
           ),
           for (int i = 0; i < navIcons.length; i++)
             ListTile(
               contentPadding: const EdgeInsets.symmetric(horizontal: 30),
-              leading: Icon(navIcons[i]),
+              leading: Icon(navIcons[i], color: Colors.white),
               title: Text(navTitles[i]),
               titleTextStyle: const TextStyle(
                   color: Colors.white,
                   fontWeight: FontWeight.w600,
                   fontSize: 16),
+              hoverColor: Colors.white24,
               onTap: () {},
             )
         ],

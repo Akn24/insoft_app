@@ -10,7 +10,18 @@ class SiteLogo extends StatelessWidget {
       child: const Text(
         "Insoft Solutions",
         style: TextStyle(
-            fontSize: 22, fontWeight: FontWeight.bold, color: Colors.white),
+          fontSize: 26,
+          fontWeight: FontWeight.w900,
+          color: Color(0xFF004AAD),
+          letterSpacing: 1.2,
+          shadows: [
+            Shadow(
+              color: Color(0x33004AAD),
+              blurRadius: 8,
+              offset: Offset(0, 2),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,11 +1,19 @@
+//import '../constants/theme.dart';
 import 'package:demo_app/styles/style.dart';
 import 'package:demo_app/widgets/site_logo.dart';
 import 'package:flutter/material.dart';
-
 import '../constants/nav_items.dart';
 
 class HeaderDesktop extends StatelessWidget {
-  const HeaderDesktop({super.key});
+  final List<GlobalKey> sectionKeys;
+  final Function(GlobalKey) scrollToSection;
+
+  const HeaderDesktop({
+    super.key,
+    required this.sectionKeys,
+    required this.scrollToSection,
+  });
+
 
   @override
   Widget build(BuildContext context) {
@@ -26,18 +34,44 @@ class HeaderDesktop extends StatelessWidget {
             for (int i = 0; i < navTitles.length; i++)
               Padding(
                 padding: const EdgeInsets.only(right: 20.0),
-                child: TextButton(
-                    onPressed: () {},
-                    child: Text(
-                      navTitles[i],
-                      style:
-                          Theme.of(context).textTheme.displayMedium?.copyWith(
-                                fontSize: 16,
-                                fontWeight: FontWeight.w500,
-                              ),
-                    )),
+                child: _NavItem(
+                  title: navTitles[i],
+                  onTap: () => scrollToSection(sectionKeys[i]),
+                ),
               ),
           ],
         ));
+  }
+}
+
+class _NavItem extends StatefulWidget {
+  final String title;
+  final VoidCallback onTap;
+  const _NavItem({required this.title, required this.onTap});
+  @override
+  State<_NavItem> createState() => _NavItemState();
+}
+
+class _NavItemState extends State<_NavItem> {
+  bool _isHovered = false;
+  @override
+  Widget build(BuildContext context) {
+    return MouseRegion(
+      onEnter: (_) => setState(() => _isHovered = true),
+      onExit: (_) => setState(() => _isHovered = false),
+      child: GestureDetector(
+        onTap: widget.onTap,
+        child: AnimatedDefaultTextStyle(
+          duration: const Duration(milliseconds: 200),
+          style: Theme.of(context).textTheme.displayMedium!.copyWith(
+                fontSize: 16,
+                fontWeight: FontWeight.w600,
+                color: const Color(0xFF004AAD),
+                letterSpacing: 0.5,
+              ),
+          child: Text(widget.title),
+        ),
+      ),
+    );
   }
 }

@@ -19,6 +19,24 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
+  final landingPageKey = GlobalKey();
+  final aboutUsKey = GlobalKey();
+  final GlobalKey _productsKey = GlobalKey();
+  final contactUsKey = GlobalKey();
+  final ScrollController _scrollController = ScrollController();
+
+  late final List<GlobalKey> sectionKeys;
+  @override
+  void initState() {
+    super.initState();
+    sectionKeys = [
+      landingPageKey,
+      aboutUsKey,
+      _productsKey,
+      contactUsKey,
+    ];
+  }
+
   @override
   Widget build(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
@@ -28,11 +46,17 @@ class _HomePageState extends State<HomePage> {
           endDrawer: constraints.maxWidth >= kMinDesktopWidth
               ? null
               : const DrawerMobile(),
-          body: ListView(
-            scrollDirection: Axis.vertical,
+          body: SingleChildScrollView(
+            controller: _scrollController,
+            child:Column(
+              crossAxisAlignment: CrossAxisAlignment.stretch,            
             children: [
+              // Header
               constraints.maxWidth >= kMinDesktopWidth
-                  ? const HeaderDesktop()
+                  ? HeaderDesktop(
+                      sectionKeys: sectionKeys,
+                      scrollToSection: scrollToSection,
+                    )
                   : HeaderMobile(
                       onTap: () {},
                       onMenuTap: () {
@@ -40,23 +64,50 @@ class _HomePageState extends State<HomePage> {
                       },
                     ),
 
-              //LandingPage
-              constraints.maxWidth >= kMinDesktopWidth
-                  ? const LandingPage()
-                  : const LandingPageMobile(),
+              // Landing Page
+              KeyedSubtree(
+                key: landingPageKey,
+                child: constraints.maxWidth >= kMinDesktopWidth
+                    ? const LandingPage()
+                    : const LandingPageMobile(),
+              ),
 
-              //About Us
-              constraints.maxWidth >= kMinDesktopWidth
-                  ? const AboutUsDesktop()
-                  : const AboutUsMobile(),
+              // About Us
+              KeyedSubtree(
+                key: aboutUsKey,
+                child: constraints.maxWidth >= kMinDesktopWidth
+                    ? const AboutUsDesktop()
+                    : const AboutUsMobile(),
+              ),
 
-              //Products
-              const ProductsServices(),
+              // Products
+              KeyedSubtree(
+                  key: _productsKey,
+                  child:const SizedBox(
+                    height: 1300,
+                    child: ProductsServices()),
+                  ),
+                
 
-              //Contact Us
-              const ContactUs()
-            ],
+
+              // Contact Us
+              KeyedSubtree(
+                key: contactUsKey,
+                child: const ContactUs(),
+              ),
+            ],)
           ));
     });
+  }
+
+  void scrollToSection(GlobalKey key) {
+    final context = key.currentContext;
+    if (context != null) {
+      Scrollable.ensureVisible(
+        context,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+    }
   }
 }
