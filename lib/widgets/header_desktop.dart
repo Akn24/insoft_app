@@ -66,7 +66,7 @@ class _NavItemState extends State<_NavItem> {
           style: Theme.of(context).textTheme.displayMedium!.copyWith(
                 fontSize: 16,
                 fontWeight: FontWeight.w600,
-                color: const Color(0xFF004AAD),
+                color: _isHovered ? const Color(0xFF1976D2) : const Color(0xFF004AAD),
                 letterSpacing: 0.5,
               ),
           child: Text(widget.title),
