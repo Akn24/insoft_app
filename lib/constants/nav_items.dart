@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-List<String> navTitles = ["Home", "About Us", "Products", "Contact Us"];
+List<String> navTitles = ["Home", "About Us","Service", "Products", "Contact Us"];
 List<IconData> navIcons = [
   Icons.home,
   Icons.android_outlined,

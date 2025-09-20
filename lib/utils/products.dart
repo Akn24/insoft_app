@@ -22,37 +22,58 @@ List<ProductList> productList = [
       title: "Tally Prime GST Ready - Single User",
       subtitle:
           "TallyPrime Silver Single User. The all-new TallyPrime is India’s most popular business software.",
-      price: "₹ 22,500",
+      price: "₹ 22,500 + 18% GST",
       downloadlink: "https://tallysolutions.com/buy-tally/"),
   ProductList(
       image: "assets/tally-gold.png",
       title: "Tally Prime GST Ready - Multi User",
       subtitle:
           "TallyPrime Gold Multi User. The all-new TallyPrime is India’s most popular business software.",
-      price: "₹ 67,500",
+      price: "₹ 67,500 + 18% GST",
       downloadlink: "https://tallysolutions.com/buy-tally/"),
   ProductList(
     image: "assets/tally-prime-server.jpg",
-    title: "Tally Prime Server",
+    title: "TSS Silver (1 Year)",
     subtitle:
-        "Tally Prime Server helps enhance the speed and control of Tally multi-user by converting the current ‘peer-to-peer’ kind of data access.",
-    price: "₹ 2,70,000",
+        "for Banking Module for Synchronization for Remote Login for Latest Updates for Mobile Access.",
+    price: "₹ 4,500 + 18% GST",
     downloadlink: "https://tallysolutions.com/tally-prime-server/",
   ),
   ProductList(
       image: "assets/tally-prime-product.jpg",
-      title: "Tally Prime Server",
+      title: "TSS Silver (2 Years)",
       subtitle:
-          "Tally Prime Server helps enhance the speed and control of Tally multi-user by converting the current ‘peer-to-peer’ kind of data access.",
-      price: "₹ 2,70,000",
+          "for Banking Module for Synchronization for Remote Login for Latest Updates for Mobile Access.",
+      price: "₹ 8,100 + 18% GST",
       downloadlink: "https://tallysolutions.com/tally-prime-server/"),
   ProductList(
       image: "assets/tally-prime-product.jpg",
-      title: "Tally Prime Server",
+      title: "TSS Gold (1 Year)",
       subtitle:
-          "Tally Prime Server helps enhance the speed and control of Tally multi-user by converting the current ‘peer-to-peer’ kind of data access.",
-      price: "₹ 2,70,000",
+          "for Banking Module for Synchronization for Remote Login for Latest Updates for Mobile Access.",
+      price: "₹ 13,500 + 18% GST",
       downloadlink: "https://tallysolutions.com/tally-prime-server/"),
+    ProductList(
+      image: "assets/tally-prime-product.jpg",
+      title: "TSS Gold (2 Years)",
+      subtitle:
+          "for Banking Module for Synchronization for Remote Login for Latest Updates for Mobile Access.",
+      price: "₹ 24,300 + 18% GST",
+      downloadlink: "https://tallysolutions.com/tally-prime-server/"),
+    ProductList(
+      image: "assets/tally-prime-product.jpg",
+      title: "TSS Auditor (1 Year)",
+      subtitle:
+          "for Banking Module for Synchronization for Remote Login for Latest Updates for Mobile Access.",
+      price: "₹ 6,700 + 18% GST",
+      downloadlink: "https://tallysolutions.com/tally-prime-server/"),
+    ProductList(
+      image: "assets/tally-prime-product.jpg",
+      title: "TSS Auditor (2 Years)",
+      subtitle:
+          "for Banking Module for Synchronization for Remote Login for Latest Updates for Mobile Access.",
+      price: "₹ 12,150 + 18% GST",
+      downloadlink: "Buy Now"),
 ];
 
 List<ProductList> serviceList = [

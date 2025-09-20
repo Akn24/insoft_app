@@ -8,6 +8,7 @@ import 'package:demo_app/widgets/header_mobile.dart';
 import 'package:demo_app/widgets/main_desktop.dart';
 import 'package:demo_app/widgets/main_mobile.dart';
 import 'package:demo_app/widgets/products_desktop.dart';
+import 'package:demo_app/widgets/service_desktop.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -21,6 +22,7 @@ class _HomePageState extends State<HomePage> {
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final landingPageKey = GlobalKey();
   final aboutUsKey = GlobalKey();
+  final serviceKey = GlobalKey();
   final GlobalKey _productsKey = GlobalKey();
   final contactUsKey = GlobalKey();
   final ScrollController _scrollController = ScrollController();
@@ -32,6 +34,7 @@ class _HomePageState extends State<HomePage> {
     sectionKeys = [
       landingPageKey,
       aboutUsKey,
+      serviceKey,
       _productsKey,
       contactUsKey,
     ];
@@ -47,56 +50,58 @@ class _HomePageState extends State<HomePage> {
               ? null
               : const DrawerMobile(),
           body: SingleChildScrollView(
-            controller: _scrollController,
-            child:Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,            
-            children: [
-              // Header
-              constraints.maxWidth >= kMinDesktopWidth
-                  ? HeaderDesktop(
-                      sectionKeys: sectionKeys,
-                      scrollToSection: scrollToSection,
-                    )
-                  : HeaderMobile(
-                      onTap: () {},
-                      onMenuTap: () {
-                        scaffoldKey.currentState?.openEndDrawer();
-                      },
-                    ),
+              controller: _scrollController,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  // Header
+                  constraints.maxWidth >= kMinDesktopWidth
+                      ? HeaderDesktop(
+                          sectionKeys: sectionKeys,
+                          scrollToSection: scrollToSection,
+                        )
+                      : HeaderMobile(
+                          onTap: () {},
+                          onMenuTap: () {
+                            scaffoldKey.currentState?.openEndDrawer();
+                          },
+                        ),
 
-              // Landing Page
-              KeyedSubtree(
-                key: landingPageKey,
-                child: constraints.maxWidth >= kMinDesktopWidth
-                    ? const LandingPage()
-                    : const LandingPageMobile(),
-              ),
+                  // Landing Page
+                  KeyedSubtree(
+                    key: landingPageKey,
+                    child: constraints.maxWidth >= kMinDesktopWidth
+                        ? const LandingPage()
+                        : const LandingPageMobile(),
+                  ),
 
-              // About Us
-              KeyedSubtree(
-                key: aboutUsKey,
-                child: constraints.maxWidth >= kMinDesktopWidth
-                    ? const AboutUsDesktop()
-                    : const AboutUsMobile(),
-              ),
+                  // About Us
+                  KeyedSubtree(
+                    key: aboutUsKey,
+                    child: constraints.maxWidth >= kMinDesktopWidth
+                        ? const AboutUsDesktop()
+                        : const AboutUsMobile(),
+                  ),
 
-              // Products
-              KeyedSubtree(
-                  key: _productsKey,
-                  child:const SizedBox(
-                    height: 1300,
-                    child: ProductsServices()),
+                  KeyedSubtree(
+                    key: serviceKey,
+                    child: const ServiceDesktop(),
+                  ),
+
+                  // Products
+                  KeyedSubtree(
+                    key: _productsKey,
+                    child:
+                        const SizedBox(height: 1300, child: ProductsServices()),
                   ),
                 
-
-
-              // Contact Us
-              KeyedSubtree(
-                key: contactUsKey,
-                child: const ContactUs(),
-              ),
-            ],)
-          ));
+                  // Contact Us
+                  KeyedSubtree(
+                    key: contactUsKey,
+                    child: const ContactUs(),
+                  ),
+                ],
+              )));
     });
   }
 
