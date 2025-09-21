@@ -17,6 +17,8 @@ jobs:
         uses: subosito/flutter-action@v2
         with:
           channel: stable
+          # If you ever want to pin a version:
+          # flutter-version: "3.24.x"
 
       - name: Enable web
         run: flutter config --enable-web
@@ -26,7 +28,7 @@ jobs:
 
       - name: Build web (custom domain -> base-href "/")
         run: |
-          flutter build web --release --web-renderer canvaskit --base-href "/"
+          flutter build web --release --base-href "/"
           cp build/web/index.html build/web/404.html
 
       - name: Deploy to gh-pages
