@@ -7,10 +7,8 @@ on:
 permissions:
   contents: write
 
-# Run all shell commands inside your Flutter app folder
-defaults:
-  run:
-    working-directory: insoft_app   # <= CHANGE if your app folder is different
+env:
+  APP_DIR: insoft_app   # <-- your Flutter app folder (contains pubspec.yaml)
 
 jobs:
   build-and-deploy:
@@ -18,21 +16,27 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Debug paths (helps if it fails)
+        run: |
+          pwd
+          ls -la
+          ls -la "$APP_DIR"
+
       - name: Set up Flutter
         uses: subosito/flutter-action@v2
         with:
           channel: stable
 
-      - name: Enable web (idempotent)
+      - name: Enable web
+        working-directory: ${{ env.APP_DIR }}
         run: flutter config --enable-web
 
-      - name: Flutter doctor (optional for debugging)
-        run: flutter doctor -v
-
       - name: Install deps
+        working-directory: ${{ env.APP_DIR }}
         run: flutter pub get
 
-      - name: Build web
+      - name: Build web (custom domain -> base-href "/")
+        working-directory: ${{ env.APP_DIR }}
         run: |
           flutter build web --release --web-renderer canvaskit --base-href "/"
           cp build/web/index.html build/web/404.html
@@ -42,6 +46,6 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_branch: gh-pages
-          publish_dir: insoft_app/build/web   # <= NOTE: path includes the folder
+          publish_dir: ${{ env.APP_DIR }}/build/web
           force_orphan: true
           cname: inssoftsolutions.in
