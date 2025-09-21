@@ -2,10 +2,15 @@ name: Deploy Flutter Web to GitHub Pages
 
 on:
   push:
-    branches: [main]   # deploy when you push to main
+    branches: [main]
 
 permissions:
   contents: write
+
+# Run all shell commands inside your Flutter app folder
+defaults:
+  run:
+    working-directory: insoft_app   # <= CHANGE if your app folder is different
 
 jobs:
   build-and-deploy:
@@ -18,20 +23,25 @@ jobs:
         with:
           channel: stable
 
+      - name: Enable web (idempotent)
+        run: flutter config --enable-web
+
+      - name: Flutter doctor (optional for debugging)
+        run: flutter doctor -v
+
       - name: Install deps
         run: flutter pub get
 
-      # custom domain at root -> base-href "/"
       - name: Build web
         run: |
           flutter build web --release --web-renderer canvaskit --base-href "/"
-          cp build/web/index.html build/web/404.html   # SPA routing fix
+          cp build/web/index.html build/web/404.html
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/web
           publish_branch: gh-pages
+          publish_dir: insoft_app/build/web   # <= NOTE: path includes the folder
           force_orphan: true
           cname: inssoftsolutions.in
