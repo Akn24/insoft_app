@@ -31,7 +31,7 @@ class LandingPageMobile extends StatelessWidget {
               ),
               const SizedBox(height: 24),
               const Text(
-                "Hi, \nI'm Ankit Kumar Nath\nA Flutter Developer",
+                "Your one-stop solution for comprehensive Tally services and customized business software, helping you stay ahead in today's competitive market.",
                 style: TextStyle(
                   height: 1.5,
                   fontWeight: FontWeight.bold,
