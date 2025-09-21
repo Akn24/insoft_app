@@ -38,4 +38,4 @@ jobs:
           publish_branch: gh-pages
           publish_dir: build/web
           force_orphan: true
-          cname: inssoftsolutions.in
+          cname: insoftsolutions.in
