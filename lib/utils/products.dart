@@ -82,20 +82,20 @@ List<ProductList> serviceList = [
       title: "Tally Prime Single User Renewal (Silver Renewal)",
       subtitle:
           "Renew and Stay Updated! Harness the power of TSS (Tally Software Services) – so that you are always on our latest release.",
-      price: "₹ 4,500",
+      price: "",
       downloadlink: "Buy Now"),
   ProductList(
       image: "assets/Biz-Analyst-Tally-Mobile-App.jpg",
       title: "Biz Analyst - Tally Mobile App",
       subtitle:
           "Biz Analyst Tally mobile app brings real time information & allows you to access your Tally ERP9 data anytime / anywhere.",
-      price: "₹ 2,500",
+      price: "",
       downloadlink: "Buy Now"),
   ProductList(
       image: "assets/Tally-Cloud.jpg",
       title: "Tally Cloud",
       subtitle:
           "Access your Tally.ERP 9 from anywhere & any device. No need to install Tally on any of your local systems.",
-      price: "₹ 3,000",
+      price: "",
       downloadlink: "Buy Now"),
 ];
